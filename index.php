@@ -1,3 +1,15 @@
+<!-- includiamo nel file una seconda pagina in cui metteremo la funzione che ci genererà la password -->
+<?php
+include __DIR__. './functions.php';
+
+if(!empty($_GET['lengthinput'])){
+
+    session_start();
+    $_SESSION['lengthinput'] = getRandomPsw($psw);
+    header('Location: ./randompassword.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,16 +21,16 @@
 </head>
 <body>
     <div class="container p-4">
-    <h1 class="p-4 mb-4 text-center">Genera la tua password</h1>
+        <h1 class="p-4 mb-4 text-center">Genera la tua password</h1>
+        <!-- creiamo form per lunghezza password -->
 
-    <form action="./index.php" method="GET">
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Inserisci la lunghezza della password da generare</label>
-            <input type="text" name="choosepsw" class="form-control" id="exampleInputPassword1">
-        </div>
-        <button type="submit" class="btn btn-primary">Invia</button>
-    </form>
-
+        <form action="./index.php" method="GET">
+            <div class="mb-3">
+                <label for="input" class="form-label">Inserisci la lunghezza in numeri della password da generare </label>
+                <input type="number" name="lengthinput" class="form-control" >
+            </div>
+            <button type="submit" class="btn btn-primary">Invia</button>
+        </form>
     </div>
     
 </body>
