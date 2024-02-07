@@ -8,10 +8,12 @@
     <title>PHP Strong Password Generator</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container p-4">
+    <h1 class="p-4 mb-4 text-center">Genera la tua password</h1>
+
     <form action="./index.php" method="GET">
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Scegli la lunghezza della password</label>
+            <label for="exampleInputPassword1" class="form-label">Inserisci la lunghezza della password da generare</label>
             <input type="text" name="choosepsw" class="form-control" id="exampleInputPassword1">
         </div>
         <button type="submit" class="btn btn-primary">Invia</button>
